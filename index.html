@@ -68,20 +68,20 @@
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
         }
 
         h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
         }
 
         h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
         }
 
         p {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         /* Header and Mobile Menu */
@@ -91,7 +91,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: var(--transition);
@@ -108,8 +108,8 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.6rem;
+            gap: 8px;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
@@ -122,12 +122,12 @@
         }
 
         .logo-icon {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         .nav-links a {
@@ -136,7 +136,7 @@
             font-weight: 600;
             padding: 0.5rem 0;
             position: relative;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .nav-links a::after {
@@ -158,20 +158,21 @@
         .toggle-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             z-index: 1001;
         }
 
         .toggle-label {
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            display: none;
         }
 
         .toggle-switch {
             position: relative;
             display: inline-block;
-            width: 52px;
-            height: 26px;
+            width: 48px;
+            height: 24px;
         }
 
         .toggle-switch input {
@@ -195,8 +196,8 @@
         .slider:before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
+            height: 18px;
+            width: 18px;
             left: 3px;
             bottom: 3px;
             background-color: white;
@@ -209,14 +210,14 @@
         }
 
         input:checked+.slider:before {
-            transform: translateX(26px);
+            transform: translateX(24px);
         }
 
         /* Hamburger Menu */
         .hamburger {
             display: none;
             cursor: pointer;
-            width: 30px;
+            width: 28px;
             height: 20px;
             position: relative;
             z-index: 1001;
@@ -269,26 +270,27 @@
         }
 
         /* Mobile Menu */
-        @media (max-width: 992px) {
+        /* Mobile Menu */
+        @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -100%;
+                left: -100%;
                 width: 80%;
-                max-width: 400px;
+                max-width: 300px;
                 height: 100vh;
                 background-color: var(--header-bg);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 2rem;
-                transition: right 0.3s ease-in-out;
+                transition: left 0.3s ease-in-out;
                 z-index: 1000;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links.active {
-                right: 0;
+                left: 0;
             }
 
             .hamburger {
@@ -303,10 +305,10 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 6rem 2rem 5rem;
+            padding: 4rem 1.5rem 3rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -330,21 +332,21 @@
         }
 
         .hero h1 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             animation: fadeInUp 1s ease-out both;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             max-width: 700px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
             animation: fadeInUp 1s ease-out 0.2s both;
             opacity: 0.9;
         }
 
         /* Search Container */
         .search-container {
-            max-width: 650px;
+            max-width: 100%;
             margin: 0 auto;
             position: relative;
             animation: fadeInUp 1s ease-out 0.4s both;
@@ -352,10 +354,10 @@
 
         .search-container input {
             width: 100%;
-            padding: 1.1rem 1.5rem;
+            padding: 1rem 1.2rem;
             border-radius: 50px;
             border: none;
-            font-size: 1.05rem;
+            font-size: 1rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
@@ -368,14 +370,14 @@
 
         .search-container button {
             position: absolute;
-            right: 15px;
+            right: 12px;
             top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
             color: var(--primary-color);
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: transform 0.3s ease;
         }
 
@@ -387,14 +389,15 @@
         .categories {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin: 2rem auto 3rem;
+            gap: 8px;
+            margin: 1.5rem auto 2rem;
             flex-wrap: wrap;
-            max-width: 900px;
+            max-width: 100%;
+            padding: 0 1rem;
         }
 
         .category-btn {
-            padding: 0.6rem 1.4rem;
+            padding: 0.5rem 1rem;
             border: none;
             background-color: var(--card-bg);
             color: var(--text-color);
@@ -402,8 +405,9 @@
             cursor: pointer;
             box-shadow: var(--shadow);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: var(--transition);
+            white-space: nowrap;
         }
 
         .category-btn.active,
@@ -417,12 +421,12 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             position: relative;
             display: inline-block;
             left: 50%;
@@ -432,7 +436,7 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -443,15 +447,15 @@
         /* Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         /* Cards */
         .card {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -514,12 +518,12 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--card-shadow-hover);
         }
 
         .card-img-container {
-            height: 220px;
+            height: 180px;
             overflow: hidden;
             position: relative;
         }
@@ -536,40 +540,40 @@
         }
 
         .card-content {
-            padding: 1.8rem;
+            padding: 1.5rem;
         }
 
         .card-content h3 {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: var(--primary-color);
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         .card-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: var(--text-color);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .card-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1.8rem 1.8rem;
+            padding: 0 1.5rem 1.5rem;
         }
 
         .tags {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .tag {
             background-color: rgba(110, 72, 170, 0.1);
             color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
+            padding: 0.25rem 0.6rem;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             transition: var(--transition);
         }
@@ -581,7 +585,7 @@
         }
 
         .preview-btn {
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -591,7 +595,8 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 0.85rem;
         }
 
         .preview-btn:hover {
@@ -602,9 +607,9 @@
 
         /* About Section */
         .about {
-            padding: 6rem 2rem;
+            padding: 4rem 1.5rem;
             background-color: var(--card-bg);
-            margin: 5rem 0;
+            margin: 3rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -624,8 +629,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
             position: relative;
             z-index: 1;
         }
@@ -637,10 +642,11 @@
         .about-image {
             animation: fadeInRight 0.8s ease-out both;
             position: relative;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 400px;
+            height: 300px;
+            order: -1;
         }
 
         .about-image img {
@@ -657,7 +663,7 @@
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-20px);
             }
 
             to {
@@ -669,7 +675,7 @@
         @keyframes fadeInRight {
             from {
                 opacity: 0;
-                transform: translateX(30px);
+                transform: translateX(20px);
             }
 
             to {
@@ -681,16 +687,16 @@
         /* Stats */
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .stat-item {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background-color: rgba(110, 72, 170, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
             transition: var(--transition);
         }
 
@@ -700,23 +706,23 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text-color);
             opacity: 0.8;
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 2rem;
+            padding: 4rem 1.5rem;
             background-color: var(--bg-color);
-            margin: 5rem 0;
+            margin: 3rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -741,15 +747,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .service-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
+            border-radius: 10px;
+            padding: 1.8rem;
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
@@ -757,15 +763,15 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--card-shadow-hover);
             border-color: var(--primary-color);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             transition: var(--transition);
         }
 
@@ -775,26 +781,28 @@
         }
 
         .service-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: var(--primary-color);
         }
 
         .service-description {
             color: var(--text-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             opacity: 0.9;
+            font-size: 0.95rem;
         }
 
         .service-link {
             display: inline-block;
-            padding: 0.6rem 1.5rem;
+            padding: 0.5rem 1.2rem;
             background-color: var(--primary-color);
             color: white;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .service-link:hover {
@@ -824,9 +832,9 @@
 
         .modal-content {
             background-color: var(--card-bg);
-            margin: 2rem auto;
-            max-width: 1000px;
-            border-radius: 12px;
+            margin: 1rem auto;
+            max-width: 95%;
+            border-radius: 10px;
             overflow: hidden;
             transform: scale(0.9);
             transition: transform 0.3s ease;
@@ -841,21 +849,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1.5rem;
             background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             color: white;
         }
 
         .modal-header h2 {
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         .close-modal {
             background: none;
             border: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -865,13 +873,13 @@
         }
 
         .modal-body {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         /* Carousel */
         .carousel {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -881,7 +889,7 @@
             position: relative;
             width: 100%;
             overflow: hidden;
-            height: 500px;
+            height: 300px;
         }
 
         .carousel-item {
@@ -918,15 +926,15 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 1rem;
+            margin: 0 0.8rem;
             transition: background-color 0.3s ease;
         }
 
@@ -936,17 +944,17 @@
 
         .carousel-indicators {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
+            gap: 8px;
             z-index: 2;
         }
 
         .carousel-indicator {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.5);
             border: none;
@@ -959,57 +967,59 @@
         }
 
         .modal-description {
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .modal-features {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .modal-features h4 {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--primary-color);
+            font-size: 1.2rem;
         }
 
         .features-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
         }
 
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 8px;
         }
 
         .feature-icon {
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 3px;
         }
 
         .modal-footer {
             display: flex;
             justify-content: flex-end;
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 1.5rem;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .modal-btn {
-            padding: 0.8rem 1.8rem;
+            padding: 0.7rem 1.5rem;
             background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
         }
 
@@ -1023,22 +1033,22 @@
         footer {
             background-color: var(--footer-bg);
             color: var(--footer-text);
-            padding: 4rem 2rem 2rem;
-            margin-top: 5rem;
+            padding: 3rem 1.5rem 1.5rem;
+            margin-top: 3rem;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
         }
 
         .footer-column h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             position: relative;
             display: inline-block;
         }
@@ -1046,7 +1056,7 @@
         .footer-column h3::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: 0;
             width: 50%;
             height: 2px;
@@ -1058,7 +1068,7 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .footer-column ul li a {
@@ -1067,7 +1077,8 @@
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 0.9rem;
         }
 
         .footer-column ul li a:hover {
@@ -1075,19 +1086,20 @@
         }
 
         .footer-column p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             opacity: 0.9;
+            font-size: 0.9rem;
         }
 
         .social-links {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 1.2rem;
         }
 
         .social-links a {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
@@ -1098,19 +1110,19 @@
 
         .newsletter-form {
             display: flex;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
         }
 
         .newsletter-form input {
             flex: 1;
-            padding: 0.8rem 1rem;
+            padding: 0.7rem 0.9rem;
             border: none;
             border-radius: 5px 0 0 5px;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .newsletter-form button {
-            padding: 0 1.2rem;
+            padding: 0 1rem;
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -1125,27 +1137,27 @@
 
         .copyright {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
             background-color: var(--primary-color);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
@@ -1165,23 +1177,27 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (min-width: 768px) {
+            .hero {
+                padding: 5rem 2rem 4rem;
+            }
+
             .about-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
 
             .about-image {
+                order: 0;
                 height: 350px;
-                order: -1;
             }
 
             .stats {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
 
             .features-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .carousel-inner {
@@ -1189,97 +1205,46 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 992px) {
+            .toggle-label {
+                display: block;
+            }
+
+            .nav-links {
+                gap: 25px;
+            }
+
+            .nav-links a {
+                font-size: 1.05rem;
+            }
+
             .hero {
-                padding: 5rem 1.5rem 4rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 4rem 1rem 3rem;
+                padding: 6rem 2rem 5rem;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: clamp(2.5rem, 5vw, 3.5rem);
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
             }
 
-            .search-container input {
-                padding: 1rem;
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 2.5rem;
             }
 
-            .categories {
-                gap: 8px;
+            .card-img-container {
+                height: 220px;
             }
 
-            .category-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-            }
-
-            .card-content,
-            .card-footer {
-                padding: 1.5rem;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-header {
-                padding: 1rem 1.5rem;
-            }
-
-            .modal-body {
-                padding: 1.5rem;
-            }
-
-            .carousel-control {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
+            .modal-content {
+                max-width: 900px;
             }
 
             .carousel-inner {
-                height: 300px;
-            }
-
-            .service-card {
-                padding: 1.5rem;
-            }
-
-            .service-icon {
-                font-size: 2.5rem;
-            }
-
-            .service-title {
-                font-size: 1.3rem;
+                height: 500px;
             }
         }
     </style>
@@ -1288,7 +1253,7 @@
 <body>
     <header>
         <div class="navbar">
-            <a href="#" class="logo">
+            <a href="#Home" class="logo">
                 <i class="fas fa-temple logo-icon"></i>
                 <span>Temply</span>
             </a>
@@ -1296,8 +1261,6 @@
             <div class="nav-links">
                 <a href="#Home">Home</a>
                 <a href="#websites">Showcase</a>
-
-
                 <a href="#contact">Contact Us</a>
             </div>
 
@@ -1376,10 +1339,6 @@
                     <a href="#contact" class="service-link">Learn More</a>
                 </div>
 
-
-
-
-
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
@@ -1406,8 +1365,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Modal for website preview -->
     <div class="modal" id="previewModal">
@@ -1455,11 +1412,9 @@
                 <p>Creating exceptional digital experiences that drive growth and engagement for businesses of all
                     sizes.</p>
                 <div class="social-links">
-
                     <a
                         href="https://www.instagram.com/temply101?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
                             class="fab fa-instagram"></i></a>
-
                 </div>
             </div>
             <div class="footer-column">
@@ -1467,8 +1422,6 @@
                 <ul>
                     <li><a href="#Home"><i class="fas fa-chevron-right"></i> Home</a></li>
                     <li><a href="#websites"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-
-
                     <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                 </ul>
             </div>
@@ -1476,12 +1429,10 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <ul>
-
-
                     <li><a href="https://wa.me/201500209602"><i class="fab fa-whatsapp"></i> +201500209602</a></li>
-                    <li><a href="templysites@gmail.com"><i class="fas fa-envelope"></i> templysites@gmail.com</a></li>
+                    <li><a href="mailto:templysites@gmail.com"><i class="fas fa-envelope"></i> templysites@gmail.com</a>
+                    </li>
                 </ul>
-                </form>
             </div>
         </div>
         <div class="copyright">
@@ -1503,7 +1454,6 @@
                 description: "A luxurious real estate website with booking functionality and gallery showcasing temple views. Designed for ultimate user experience with seamless navigation and stunning visuals.",
                 category: "business",
                 tags: ["responsive", "booking", "gallery", "luxury"],
-
                 images: ["./1.jpg", "./2.jpg", "./3.jpg", "./4.jpg"],
                 features: [
                     "Online booking system with real-time availability",
@@ -1511,7 +1461,6 @@
                     "Photo gallery with high-resolution images",
                     "Mobile-optimized design",
                     "Multilingual support",
-
                 ]
             },
             {
@@ -1520,7 +1469,6 @@
                 description: "Website for a trusted pharmacy featuring healthcare services, products, and professional staff. Clean, professional design with health-focused elements.",
                 category: "business",
                 tags: ["pharmacy", "healthcare", "medical", "responsive"],
-
                 images: ["./5.jpg", "./6.jpg", "./7.jpg", "./8.jpg"],
                 features: [
                     "Service showcase grid",
@@ -1532,13 +1480,11 @@
                 ]
             },
             {
-
                 id: 3,
                 title: "Our Love Story ❤️",
                 description: "An interactive digital scrapbook showcasing precious moments in a romantic relationship. Features memory cards, image popups, music, and love notes with elegant animations.",
                 category: "personal",
                 tags: ["love", "memories", "interactive", "romantic", "scrapbook"],
-
                 images: ["./9.jpg", "./10.jpg", "./11.jpg", "./12.jpg"],
                 features: [
                     "Interactive memory gallery with hover effects",
@@ -1559,11 +1505,7 @@
                 "description": "A professional fitness center website showcasing personal training services, class schedules, facility amenities, and membership options with dynamic animations and responsive design.",
                 "category": "business",
                 "tags": ["fitness", "gym", "personal training", "health", "responsive"],
-
-                "images": [
-
-                    "./13.jpg", "./14.jpg", "./15.jpg", "./16.jpg"
-                ],
+                "images": ["./13.jpg", "./14.jpg", "./15.jpg", "./16.jpg"],
                 "features": [
                     "Responsive navigation with mobile menu",
                     "Animated hero section with call-to-action",
@@ -1579,14 +1521,12 @@
                     "Nutrition coaching information"
                 ]
             },
-
             {
                 id: 5,
                 title: "Brew Haven Coffee",
                 description: "An elegant website for a specialty coffee shop featuring menu display, online ordering, and reservation system. Designed to reflect the warm, artisan atmosphere of the cafe with rich coffee-inspired colors and smooth animations.",
                 category: "food",
                 tags: ["responsive", "menu", "online ordering", "cafe", "restaurant"],
-
                 images: ["./17.jpg", "./18.jpg", "./19.jpg", "./20.jpg"],
                 features: [
                     "Interactive menu with category filtering",
@@ -1601,7 +1541,6 @@
                     "Contact form with validation"
                 ]
             },
-
         ];
 
         // DOM elements
@@ -1769,7 +1708,6 @@
                 document.body.style.overflow = 'hidden';
             }, 10);
         }
-
 
         // Close modal
         function closeModalFunc() {
